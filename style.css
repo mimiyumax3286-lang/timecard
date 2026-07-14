@@ -1,6 +1,4 @@
-
 body {
-   font-size: 30px;
   font-family: sans-serif;
   padding: 20px;
 }
@@ -9,4 +7,12 @@ button {
   margin-right: 10px;
   padding: 10px 20px;
   font-size: 18px;
+}
+.rows {
+  display: flex;
+  gap: 20px;
+}
+
+.left, .right {
+  width: 50%;
 }
