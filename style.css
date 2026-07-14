@@ -1,7 +1,8 @@
 @media (max-width: 600px)
 body {
+   font-size: 100px;
   font-family: sans-serif;
-  padding: 100px;
+  padding: 20px;
 }
 
 button {
