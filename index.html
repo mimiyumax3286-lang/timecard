@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
      <link rel="manifest" href="manifest.json">
-     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-これを <head> の中に入れるだけ。
 <head>
   <meta charset="UTF-8">
   <title>タイムカード</title>
@@ -22,6 +20,17 @@
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js");
   }
+  <div class="rows">
+  <div class="left">
+    <h3>出勤</h3>
+    <ul id="startList"></ul>
+  </div>
+
+  <div class="right">
+    <h3>退勤</h3>
+    <ul id="endList"></ul>
+  </div>
+</div>
 </script>
 </body>
 </html>
