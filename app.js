@@ -76,13 +76,13 @@ function renderToday() {
     // 編集ボタン
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
-editBtn.onclick = () => {
-  showEditPopup(t, (newTime) => {
-    records[key].start[index] = newTime;
-    saveRecords();
-    renderToday();
-  });
-};
+    editBtn.onclick = () => {
+      showEditPopup(t, (newTime) => {
+        records[key].start[index] = newTime;
+        saveRecords();
+        renderToday();
+      });
+    };
 
     // 消すボタン
     const delBtn = document.createElement("button");
@@ -105,27 +105,13 @@ editBtn.onclick = () => {
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
- editBtn.onclick = () => {
-  showEditPopup(t, (newTime) => {
-    records[key].end[index] = newTime;
-    saveRecords();
-    renderToday();
-  });
-};
-
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "消す";
-    delBtn.onclick = () => {
-      records[key].end.splice(index, 1);
-      saveRecords();
-      renderToday();
+    editBtn.onclick = () => {
+      showEditPopup(t, (newTime) => {
+        records[key].end[index] = newTime;
+        saveRecords();
+        renderToday();
+      });
     };
-
-    li.appendChild(editBtn);
-    li.appendChild(delBtn);
-    endList.appendChild(li);
-  });
-}
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "消す";
@@ -152,8 +138,10 @@ function loadRecords() {
   if (data) {
     records = JSON.parse(data);
   }
-  function showEditPopup(originalTime, onSave) {
-  // ポップアップの背景
+}
+
+// 編集ポップアップ
+function showEditPopup(originalTime, onSave) {
   const bg = document.createElement("div");
   bg.style.position = "fixed";
   bg.style.top = "0";
@@ -166,7 +154,6 @@ function loadRecords() {
   bg.style.alignItems = "center";
   bg.style.zIndex = "9999";
 
-  // ポップアップ本体
   const box = document.createElement("div");
   box.style.background = "#fff";
   box.style.padding = "20px";
@@ -175,12 +162,10 @@ function loadRecords() {
   box.style.width = "260px";
   box.style.textAlign = "center";
 
-  // 元の日時を分解
   const [datePart, timePart] = originalTime.split(" ");
   const [year, month, day] = datePart.split("-");
   const [hour, minute] = timePart.split(":");
 
-  // 年
   const yearSel = document.createElement("select");
   for (let y = 2020; y <= 2030; y++) {
     const opt = document.createElement("option");
@@ -190,7 +175,6 @@ function loadRecords() {
     yearSel.appendChild(opt);
   }
 
-  // 月
   const monthSel = document.createElement("select");
   for (let m = 1; m <= 12; m++) {
     const opt = document.createElement("option");
@@ -200,7 +184,6 @@ function loadRecords() {
     monthSel.appendChild(opt);
   }
 
-  // 日
   const daySel = document.createElement("select");
   for (let d = 1; d <= 31; d++) {
     const opt = document.createElement("option");
@@ -210,7 +193,6 @@ function loadRecords() {
     daySel.appendChild(opt);
   }
 
-  // 時
   const hourSel = document.createElement("select");
   for (let h = 0; h < 24; h++) {
     const opt = document.createElement("option");
@@ -220,7 +202,6 @@ function loadRecords() {
     hourSel.appendChild(opt);
   }
 
-  // 分
   const minSel = document.createElement("select");
   for (let m = 0; m < 60; m++) {
     const opt = document.createElement("option");
@@ -230,7 +211,6 @@ function loadRecords() {
     minSel.appendChild(opt);
   }
 
-  // 保存ボタン
   const saveBtn = document.createElement("button");
   saveBtn.textContent = "保存";
   saveBtn.style.marginTop = "10px";
@@ -243,7 +223,6 @@ function loadRecords() {
     document.body.removeChild(bg);
   };
 
-  // 組み立て
   box.appendChild(yearSel);
   box.appendChild(monthSel);
   box.appendChild(daySel);
@@ -255,5 +234,4 @@ function loadRecords() {
 
   bg.appendChild(box);
   document.body.appendChild(bg);
-}
 }
