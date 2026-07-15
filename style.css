@@ -9,10 +9,10 @@ button {
   border: none;
   border-radius: 10px;
   margin-right: 10px;
-  background: #4CC9A6; /* ミントグリーン */
+  background: linear-gradient(#4CC9A6, #3BBE97); /* 立体感 */
   color: white;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 影で浮かせる */
   transition: 0.2s;
 }
 
@@ -21,7 +21,8 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.96);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transform: translateY(2px); /* 押した感 */
 }
 
 .rows {
