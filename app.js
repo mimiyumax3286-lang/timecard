@@ -129,6 +129,20 @@ function renderToday() {
   });
 }
 
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "消す";
+    delBtn.onclick = () => {
+      records[key].end.splice(index, 1);
+      saveRecords();
+      renderToday();
+    };
+
+    li.appendChild(editBtn);
+    li.appendChild(delBtn);
+    endList.appendChild(li);
+  });
+}
+
 // 保存
 function saveRecords() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
