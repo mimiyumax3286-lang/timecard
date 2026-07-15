@@ -73,6 +73,10 @@ function renderToday() {
     const li = document.createElement("li");
     li.textContent = t;
 
+    // ▼ ボタンをまとめる枠（ここ追加）
+    const btnRow = document.createElement("div");
+    btnRow.className = "btn-row";
+
     // 編集ボタン
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
@@ -93,8 +97,13 @@ function renderToday() {
       renderToday();
     };
 
-    li.appendChild(editBtn);
-    li.appendChild(delBtn);
+    // ▼ ボタンを枠に入れる（ここ追加）
+    btnRow.appendChild(editBtn);
+    btnRow.appendChild(delBtn);
+
+    // ▼ li に追加（ここ追加）
+    li.appendChild(btnRow);
+
     startList.appendChild(li);
   });
 
@@ -102,6 +111,9 @@ function renderToday() {
   records[key].end.forEach((t, index) => {
     const li = document.createElement("li");
     li.textContent = t;
+
+    const btnRow = document.createElement("div");
+    btnRow.className = "btn-row";
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
@@ -121,8 +133,10 @@ function renderToday() {
       renderToday();
     };
 
-    li.appendChild(editBtn);
-    li.appendChild(delBtn);
+    btnRow.appendChild(editBtn);
+    btnRow.appendChild(delBtn);
+    li.appendChild(btnRow);
+
     endList.appendChild(li);
   });
 }
