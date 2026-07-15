@@ -2,6 +2,10 @@ body {
   font-family: sans-serif;
   padding: 20px;
   font-size: 22px;
+  border: 4px solid #4CC9A6;   /* ← アプリ外枠 */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
 }
 
 body > button {
@@ -70,12 +74,12 @@ li {
   font-size: 8px;
 }
 
-li .btn-row {
+.btn-row {
   display: flex;
-  gap: 10px;                /* ← ボタンの間に余白 */
-  margin-top: 6px;          /* ← 時刻との間に余白 */
+  flex-direction: row;   /* ← 横並びを強制 */
+  gap: 10px;
+  margin-top: 6px;
 }
-
 li button {
   background: #FF6B6B;
   color: white;
