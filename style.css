@@ -116,3 +116,37 @@ li button {
   font-size: 16px;
   border-radius: 8px;
   }
+/* 打刻の文字をもっと小さく＆左詰め */
+li span {
+  font-size: 14px;        /* ← 打刻の文字を小さく */
+  text-align: left;       /* ← 左詰め */
+  white-space: pre-line;  /* ← 改行をそのまま表示 */
+}
+
+/* li 全体のレイアウト（時刻 → ボタン） */
+li {
+  display: flex;
+  flex-direction: column;   /* ← 縦並び */
+  align-items: flex-start;  /* ← 左寄せ */
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* 編集・消すボタンを横並びにする枠 */
+.btn-row {
+  display: flex;
+  flex-direction: row;   /* ← 横並びを強制 */
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* 編集・消すボタンの見た目 */
+li button {
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;        /* ← ボタンの文字も少し小さく */
+}
