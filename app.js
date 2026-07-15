@@ -36,11 +36,10 @@ function addTime(type) {
 const dateTime =
     now.getFullYear() + " " +
     String(now.getMonth() + 1).padStart(2, "0") + "\n" +
-    " " +  // ← ここが2行目の先頭スペース
+    " " +  // ← 2行目の先頭スペース
     String(now.getDate()).padStart(2, "0") + " (" + youbi + ") " +
     now.getHours().toString().padStart(2, "0") + ":" +
     now.getMinutes().toString().padStart(2, "0");
-
   const key = getTodayKey();
 
   if (!records[key]) {
