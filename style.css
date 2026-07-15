@@ -4,12 +4,17 @@ body {
   font-size: 22px;
 }
 
+body > button {
+  display: inline-block;
+}
+
 h1 {
   font-size: 32px;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 24px;   /* ← 大きすぎるなら少し下げる */
+  margin-bottom: 10px;
 }
 
 button {
@@ -25,6 +30,8 @@ button {
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
   transition: 0.2s;
   display: inline-block;
+  box-sizing: border-box;   /* ← はみ出し防止 */
+}
 }
 
 button:active {
@@ -43,6 +50,7 @@ button:hover {
 }
 
 .left, .right {
+　word-wrap: break-word;
   flex: 1;
   background: #ffffff;
   padding: 15px;
