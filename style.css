@@ -63,10 +63,19 @@ button:hover {
 
 li {
   display: flex;
+  flex-direction: column;   /* ← 縦並びにする */
+  align-items: flex-start;  /* ← 左寄せ */
+  padding: 10px 0;
   justify-content: space-between;
   padding: 16px 0;
   border-bottom: 1px solid #eee;
   font-size: 8px;
+}
+
+li .btn-row {
+  display: flex;
+  gap: 10px;                /* ← ボタンの間に余白 */
+  margin-top: 6px;          /* ← 時刻との間に余白 */
 }
 
 li button {
