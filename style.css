@@ -45,7 +45,7 @@ body > button:hover {
   word-wrap: break-word;
   flex: 1;
   background: #ffffff;
-  padding: 0;
+  padding: 16px;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-top: 6px solid #4CC9A6;
@@ -89,3 +89,8 @@ li button {
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
+}
+  ul {
+  margin: 0;          /* ← 左の余白を消す */
+  padding-left: 0;    /* ← 行頭のインデントを消す（最重要） */
+}
