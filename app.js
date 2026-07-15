@@ -76,14 +76,13 @@ function renderToday() {
     // 編集ボタン
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
-    editBtn.onclick = () => {
-      const newTime = prompt("新しい時刻を入力してください", t);
-      if (newTime) {
-        records[key].start[index] = newTime;
-        saveRecords();
-        renderToday();
-      }
-    };
+editBtn.onclick = () => {
+  showEditPopup(t, (newTime) => {
+    records[key].start[index] = newTime;
+    saveRecords();
+    renderToday();
+  });
+};
 
     // 消すボタン
     const delBtn = document.createElement("button");
@@ -106,14 +105,13 @@ function renderToday() {
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "編集";
-    editBtn.onclick = () => {
-      const newTime = prompt("新しい時刻を入力してください", t);
-      if (newTime) {
-        records[key].end[index] = newTime;
-        saveRecords();
-        renderToday();
-      }
-    };
+ editBtn.onclick = () => {
+  showEditPopup(t, (newTime) => {
+    records[key].end[index] = newTime;
+    saveRecords();
+    renderToday();
+  });
+};
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "消す";
