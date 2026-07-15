@@ -203,6 +203,8 @@ function showEditPopup(originalTime, onSave) {
     if (m == month) opt.selected = true;
     monthSel.appendChild(opt);
   }
+  yearSel.style.fontSize = "26px";   // ← ここに追加！
+　yearSel.style.padding = "8px";     // ← ここに追加！
 
   const daySel = document.createElement("select");
   for (let d = 1; d <= 31; d++) {
@@ -212,6 +214,8 @@ function showEditPopup(originalTime, onSave) {
     if (d == day) opt.selected = true;
     daySel.appendChild(opt);
   }
+  yearSel.style.fontSize = "26px";   // ← ここに追加！
+　yearSel.style.padding = "8px";     // ← ここに追加！
 
   const hourSel = document.createElement("select");
   for (let h = 0; h < 24; h++) {
@@ -220,7 +224,8 @@ function showEditPopup(originalTime, onSave) {
     opt.textContent = h.toString().padStart(2, "0");
     if (h == hour) opt.selected = true;
     hourSel.appendChild(opt);
-  }
+  }yearSel.style.fontSize = "26px";   // ← ここに追加！
+　yearSel.style.padding = "8px";     // ← ここに追加！
 
   const minSel = document.createElement("select");
   for (let m = 0; m < 60; m++) {
@@ -229,7 +234,8 @@ function showEditPopup(originalTime, onSave) {
     opt.textContent = m.toString().padStart(2, "0");
     if (m == minute) opt.selected = true;
     minSel.appendChild(opt);
-  }
+  }yearSel.style.fontSize = "26px";   // ← ここに追加！
+　yearSel.style.padding = "8px";     // ← ここに追加！
 
   const saveBtn = document.createElement("button");
   saveBtn.textContent = "保存";
