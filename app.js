@@ -27,18 +27,23 @@ function clockOut() {
 // 時刻追加
 function addTime(type) {
   const now = new Date();
-  const time = now.toLocaleTimeString();
+
+  // 年月日 + 時刻（秒なし）
+  const dateTime =
+    now.getFullYear() + "-" +
+    String(now.getMonth() + 1).padStart(2, "0") + "-" +
+    String(now.getDate()).padStart(2, "0") + " " +
+    now.getHours().toString().padStart(2, "0") + ":" +
+    now.getMinutes().toString().padStart(2, "0");
+
   const key = getTodayKey();
 
-  // 今日の枠がなければ作る
   if (!records[key]) {
     records[key] = { start: [], end: [] };
   }
 
-  // 記録追加
-  records[key][type].push(time);
+  records[key][type].push(dateTime);
 
-  // 最大10件に制限
   if (records[key][type].length > 10) {
     records[key][type].shift();
   }
