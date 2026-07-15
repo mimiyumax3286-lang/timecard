@@ -28,11 +28,16 @@ function clockOut() {
 function addTime(type) {
   const now = new Date();
 
-  // 年月日 + 時刻（秒なし）
+  // 曜日を日本語に変換
+  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+  const youbi = weekdays[now.getDay()];
+
+  // 年月日 + 曜日 + 時刻（秒なし）
   const dateTime =
     now.getFullYear() + "-" +
     String(now.getMonth() + 1).padStart(2, "0") + "-" +
-    String(now.getDate()).padStart(2, "0") + " " +
+    String(now.getDate()).padStart(2, "0") +
+    " (" + youbi + ") " +
     now.getHours().toString().padStart(2, "0") + ":" +
     now.getMinutes().toString().padStart(2, "0");
 
