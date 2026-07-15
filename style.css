@@ -4,16 +4,18 @@ body {
 }
 
 button {
-  padding: 18px 28px;
-  font-size: 22px;
+  width: 48%;               /* ← 横に2つ並べて画面いっぱい */
+  padding: 22px 0;          /* ← 高さを大きく */
+  font-size: 26px;          /* ← 文字も大きく */
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   margin-right: 12px;
   background: linear-gradient(#4CC9A6, #3BBE97);
   color: white;
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
   transition: 0.2s;
+  display: inline-block;
 }
 
 button:active {
