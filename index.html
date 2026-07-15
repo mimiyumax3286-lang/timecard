@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- ★ ここに追加！ ★ -->
+  <!-- スマホ最適化 -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>タイムカード</title>
@@ -14,8 +14,11 @@
 <body>
   <h1>タイムカード</h1>
 
-  <button onclick="clockIn()">出勤</button>
-  <button onclick="clockOut()">退勤</button>
+  <!-- ★ 出勤・退勤ボタン（横並び） ★ -->
+  <div class="start-end-buttons">
+    <button onclick="clockIn()">出勤</button>
+    <button onclick="clockOut()">退勤</button>
+  </div>
 
   <div id="result"></div>
 
