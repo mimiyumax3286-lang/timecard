@@ -94,3 +94,11 @@ li button {
   margin: 0;          /* ← 左の余白を消す */
   padding-left: 0;    /* ← 行頭のインデントを消す（最重要） */
 }
+/* 出勤・退勤ボタンを確実に横並びにする */
+.start-end-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.start-end-buttons button {
+  flex: 1;}
