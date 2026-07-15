@@ -113,7 +113,7 @@ li {
 
 /* 編集・消すボタンのサイズ */
 li button {
-  padding: 8px 14px;
+  padding: 14px 8px;
   font-size: 16px;
   border-radius: 8px;
   }
@@ -129,7 +129,7 @@ li {
   display: flex;
   flex-direction: column;   /* ← 縦並び */
   align-items: flex-start;  /* ← 左寄せ */
-  padding: 8px 0;
+  padding: 0;
   border-bottom: 1px solid #eee;
 }
 
