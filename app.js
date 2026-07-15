@@ -69,24 +69,40 @@ function renderToday() {
   if (!records[key]) return;
 
   // 出勤
-  records[key].start.forEach((t, index) => {
-    const li = document.createElement("li");
-    li.textContent = t;
+records[key].start.forEach((t, index) => {
+  const li = document.createElement("li");
+  li.textContent = t;
 
-    // ▼ ボタンをまとめる枠（ここ追加）
-    const btnRow = document.createElement("div");
-    btnRow.className = "btn-row";
+  // ボタンをまとめる枠
+  const btnRow = document.createElement("div");
+  btnRow.className = "btn-row";
 
-    // 編集ボタン
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "編集";
-    editBtn.onclick = () => {
-      showEditPopup(t, (newTime) => {
-        records[key].start[index] = newTime;
-        saveRecords();
-        renderToday();
-      });
-    };
+  const editBtn = document.createElement("button");
+  editBtn.textContent = "編集";
+  editBtn.onclick = () => {
+    showEditPopup(t, (newTime) => {
+      records[key].start[index] = newTime;
+      saveRecords();
+      renderToday();
+    });
+  };
+
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "消す";
+  delBtn.onclick = () => {
+    records[key].start.splice(index, 1);
+    saveRecords();
+    renderToday();
+  };
+
+  // ボタンを横並び枠に入れる
+  btnRow.appendChild(editBtn);
+  btnRow.appendChild(delBtn);
+
+  // li に追加
+  li.appendChild(btnRow);
+  startList.appendChild(li);
+});
 
     // 消すボタン
     const delBtn = document.createElement("button");
@@ -108,37 +124,37 @@ function renderToday() {
   });
 
   // 退勤
-  records[key].end.forEach((t, index) => {
-    const li = document.createElement("li");
-    li.textContent = t;
+records[key].end.forEach((t, index) => {
+  const li = document.createElement("li");
+  li.textContent = t;
 
-    const btnRow = document.createElement("div");
-    btnRow.className = "btn-row";
+  const btnRow = document.createElement("div");
+  btnRow.className = "btn-row";
 
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "編集";
-    editBtn.onclick = () => {
-      showEditPopup(t, (newTime) => {
-        records[key].end[index] = newTime;
-        saveRecords();
-        renderToday();
-      });
-    };
-
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "消す";
-    delBtn.onclick = () => {
-      records[key].end.splice(index, 1);
+  const editBtn = document.createElement("button");
+  editBtn.textContent = "編集";
+  editBtn.onclick = () => {
+    showEditPopup(t, (newTime) => {
+      records[key].end[index] = newTime;
       saveRecords();
       renderToday();
-    };
+    });
+  };
 
-    btnRow.appendChild(editBtn);
-    btnRow.appendChild(delBtn);
-    li.appendChild(btnRow);
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "消す";
+  delBtn.onclick = () => {
+    records[key].end.splice(index, 1);
+    saveRecords();
+    renderToday();
+  };
 
-    endList.appendChild(li);
-  });
+  btnRow.appendChild(editBtn);
+  btnRow.appendChild(delBtn);
+
+  li.appendChild(btnRow);
+  endList.appendChild(li);
+});
 }
 
 // 保存
