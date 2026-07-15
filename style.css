@@ -4,25 +4,24 @@ body {
 }
 
 button {
-  padding: 12px 20px;
-  font-size: 18px;
+  padding: 18px 28px;        /* ← 大きくした */
+  font-size: 22px;           /* ← 文字も大きく */
   border: none;
-  border-radius: 10px;
-  margin-right: 10px;
-  background: linear-gradient(#4CC9A6, #3BBE97); /* 立体感 */
+  border-radius: 12px;
+  margin-right: 12px;
+  background: linear-gradient(#4CC9A6, #3BBE97);
   color: white;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 影で浮かせる */
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
   transition: 0.2s;
 }
 
+button:active {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transform: translateY(3px);
+}
 button:hover {
   background: #3BBE97;
-}
-
-button:active {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transform: translateY(2px); /* 押した感 */
 }
 
 .rows {
@@ -41,17 +40,18 @@ button:active {
 li {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 12px 0;           /* ← 行の高さアップ */
   border-bottom: 1px solid #eee;
-  font-size: 16px;
+  font-size: 20px;           /* ← 時刻を大きく */
 }
 
 li button {
   background: #FF6B6B;
   color: white;
   border: none;
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 6px 14px;         /* ← 大きく */
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;           /* ← 文字も大きく */
+  margin-left: 10px;
 }
