@@ -1,34 +1,18 @@
+/* アプリ外枠 */
 body {
   font-family: sans-serif;
-  padding: 20px;
   font-size: 22px;
-  border: 4px solid #4CC9A6;   /* ← アプリ外枠 */
+  border: 4px solid #4CC9A6;
   border-radius: 20px;
   padding: 20px;
   margin: 10px;
 }
 
-li span {
-  white-space: pre-line;   /* ← 改行をそのまま表示 */
-}
-
+/* 出勤・退勤ボタン */
 body > button {
-  display: inline-block;
-}
-
-h1 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 24px;   /* ← 大きすぎるなら少し下げる */
-  margin-bottom: 10px;
-}
-
-button {
-  width: 48%;               /* ← 横に2つ並べて画面いっぱい */
-  padding: 22px 0;          /* ← 高さを大きく */
-  font-size: 26px;          /* ← 文字も大きく */
+  width: 48%;
+  padding: 22px 0;
+  font-size: 26px;
   border: none;
   border-radius: 14px;
   margin-right: 12px;
@@ -38,110 +22,64 @@ button {
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
   transition: 0.2s;
   display: inline-block;
-  box-sizing: border-box;   /* ← はみ出し防止 */
+  box-sizing: border-box;
 }
 
-button:active {
+body > button:active {
   box-shadow: 0 3px 8px rgba(0,0,0,0.25);
   transform: translateY(3px);
 }
 
-button:hover {
+body > button:hover {
   background: #3BBE97;
 }
 
+/* 左右の枠 */
 .rows {
   display: flex;
   gap: 20px;
   margin-top: 20px;
 }
-  .left, .right {
-  word-wrap: break-word;
+
+.left, .right {
   flex: 1;
   background: #ffffff;
   padding: 15px;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-top: 6px solid #4CC9A6;
-  overflow: hidden;       /* ← はみ出し禁止 */
-  word-break: break-all;  /* ← 長い文字を折る */
-}   /* ← これが抜けてた！ */
+  overflow: hidden;
+  word-break: break-all;
+}
 
+/* ▼▼▼ 打刻の表示ここから ▼▼▼ */
+
+/* li（打刻1件）を左ギリギリに寄せる */
 li {
+  padding: 0;              /* ← 左右の余白ゼロ */
+  margin: 0;
   display: flex;
-  flex-direction: column;   /* ← 縦並びにする */
-  align-items: flex-start;  /* ← 左寄せ */
-  padding: 0;
-  justify-content: space-between;
-  padding: 16px 0;
-  border-bottom: 1px solid #eee;
+  flex-direction: column;  /* ← 時刻 → ボタンの縦並び */
   align-items: flex-start; /* ← 左寄せ */
-  font-size: 8px;
-}
-
-.btn-row {
-  display: flex;
-  flex-direction: row;   /* ← 横並びを強制 */
-  gap: 10px;
-  margin-top: 6px;
-}
-li button {
-  background: #FF6B6B;
-  color: white;
-  border: none;
-  padding: 6px 10px;      /* ← 横幅を少し縮める */
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;        /* ← 文字も少し小さく */
-  margin-left: 12px;
-}
-/* ボタンを横並びにする枠 */
-.btn-row {
-  display: flex;
-  gap: 10px;        /* ボタンの間に余白 */
-  margin-top: 6px;  /* 時刻との間に余白 */
-}
-
-/* li の中身は縦並び（時刻 → ボタン） */
-li {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10px 0;
-  font-size: 18px;
-}
-
-/* 編集・消すボタンのサイズ */
-li button {
-  padding: 14px 8px;
-  font-size: 16px;
-  border-radius: 8px;
-  }
-/* 打刻の文字をもっと小さく＆左詰め */
-li span {
-  font-size: 14px;        /* ← 打刻の文字を小さく */
-  text-align: left;       /* ← 左詰め */
-  white-space: pre-line;  /* ← 改行をそのまま表示 */
-}
-
-/* li 全体のレイアウト（時刻 → ボタン） */
-li {
-  display: flex;
-  flex-direction: column;   /* ← 縦並び */
-  align-items: flex-start;  /* ← 左寄せ */
-  padding: 0;
   border-bottom: 1px solid #eee;
+}
+
+/* 打刻の文字（span） */
+li span {
+  font-size: 14px;         /* ← 打刻の文字を小さく */
+  white-space: pre-line;   /* ← 改行をそのまま表示 */
+  text-align: left;        /* ← 左寄せ */
 }
 
 /* 編集・消すボタンを横並びにする枠 */
 .btn-row {
   display: flex;
-  flex-direction: row;   /* ← 横並びを強制 */
+  flex-direction: row;     /* ← 横並び */
   gap: 10px;
   margin-top: 4px;
 }
 
-/* 編集・消すボタンの見た目 */
+/* 編集・消すボタン */
 li button {
   background: #FF6B6B;
   color: white;
@@ -149,5 +87,4 @@ li button {
   padding: 6px 12px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;        /* ← ボタンの文字も少し小さく */
-}
+  font-size: 14px;
