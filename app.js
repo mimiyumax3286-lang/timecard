@@ -73,15 +73,29 @@ function renderToday() {
     const li = document.createElement("li");
     li.textContent = t;
 
-    const btn = document.createElement("button");
-    btn.textContent = "消す";
-    btn.onclick = () => {
+    // 編集ボタン
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "編集";
+    editBtn.onclick = () => {
+      const newTime = prompt("新しい時刻を入力してください", t);
+      if (newTime) {
+        records[key].start[index] = newTime;
+        saveRecords();
+        renderToday();
+      }
+    };
+
+    // 消すボタン
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "消す";
+    delBtn.onclick = () => {
       records[key].start.splice(index, 1);
       saveRecords();
       renderToday();
     };
 
-    li.appendChild(btn);
+    li.appendChild(editBtn);
+    li.appendChild(delBtn);
     startList.appendChild(li);
   });
 
@@ -90,15 +104,27 @@ function renderToday() {
     const li = document.createElement("li");
     li.textContent = t;
 
-    const btn = document.createElement("button");
-    btn.textContent = "消す";
-    btn.onclick = () => {
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "編集";
+    editBtn.onclick = () => {
+      const newTime = prompt("新しい時刻を入力してください", t);
+      if (newTime) {
+        records[key].end[index] = newTime;
+        saveRecords();
+        renderToday();
+      }
+    };
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "消す";
+    delBtn.onclick = () => {
       records[key].end.splice(index, 1);
       saveRecords();
       renderToday();
     };
 
-    li.appendChild(btn);
+    li.appendChild(editBtn);
+    li.appendChild(delBtn);
     endList.appendChild(li);
   });
 }
