@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
-     <link rel="manifest" href="manifest.json">
 <head>
   <meta charset="UTF-8">
   <title>タイムカード</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <h1>タイムカード</h1>
 
-  <button id="startBtn">出勤</button>
-  <button id="endBtn">退勤</button>
+  <button onclick="clockIn()">出勤</button>
+  <button onclick="clockOut()">退勤</button>
 
   <div id="result"></div>
-  <div id="history"></div>
+
+  <div class="rows">
+    <div class="left">
+      <h3>出勤</h3>
+      <ul id="startList"></ul>
+    </div>
+
+    <div class="right">
+      <h3>退勤</h3>
+      <ul id="endList"></ul>
+    </div>
+  </div>
 
   <script src="app.js"></script>
-  <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
-  <div class="rows">
-  <div class="left">
-    <h3>出勤</h3>
-    <ul id="startList"></ul>
-  </div>
 
-  <div class="right">
-    <h3>退勤</h3>
-    <ul id="endList"></ul>
-  </div>
-</div>
-</script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </body>
 </html>
