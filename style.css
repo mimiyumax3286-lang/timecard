@@ -8,6 +8,10 @@ body {
   margin: 10px;
 }
 
+li span {
+  white-space: pre-line;   /* ← 改行をそのまま表示 */
+}
+
 body > button {
   display: inline-block;
 }
