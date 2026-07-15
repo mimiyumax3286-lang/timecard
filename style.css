@@ -71,10 +71,11 @@ li {
   display: flex;
   flex-direction: column;   /* ← 縦並びにする */
   align-items: flex-start;  /* ← 左寄せ */
-  padding: 10px 0;
+  padding: 0;
   justify-content: space-between;
   padding: 16px 0;
   border-bottom: 1px solid #eee;
+  align-items: flex-start; /* ← 左寄せ */
   font-size: 8px;
 }
 
