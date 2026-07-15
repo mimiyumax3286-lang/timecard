@@ -7,20 +7,23 @@ button {
   padding: 12px 20px;
   font-size: 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-right: 10px;
-  background: #4CAF50;
+  background: #4CC9A6; /* ミントグリーン */
   color: white;
   cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: 0.2s;
 }
 
 button:hover {
-  opacity: 0.8;
+  background: #3BBE97;
 }
 
 button:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
+
 .rows {
   display: flex;
   gap: 20px;
@@ -29,30 +32,25 @@ button:active {
 
 .left, .right {
   flex: 1;
-  background: #fff;
+  background: #ffffff;
   padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.left h3, .right h3 {
-  margin-top: 0;
-  font-size: 20px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 5px;
-}
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-top: 6px solid #4CC9A6; /* 上に色を入れてアプリ感UP */
 li {
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #eee;
+  font-size: 16px;
 }
 
 li button {
-  background: #e74c3c;
+  background: #FF6B6B;
   color: white;
   border: none;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 14px;
 }
