@@ -57,6 +57,8 @@ button:hover {
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-top: 6px solid #4CC9A6;
+  overflow: hidden;       /* ← はみ出し禁止 */
+  word-break: break-all;  /* ← 長い文字を折る */
 }   /* ← これが抜けてた！ */
 
 li {
@@ -71,9 +73,9 @@ li button {
   background: #FF6B6B;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 6px 10px;      /* ← 横幅を少し縮める */
   border-radius: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;        /* ← 文字も少し小さく */
   margin-left: 12px;
 }
