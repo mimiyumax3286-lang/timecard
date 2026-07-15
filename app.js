@@ -33,11 +33,10 @@ function addTime(type) {
   const youbi = weekdays[now.getDay()];
 
   // 年月日 + 曜日 + 時刻（秒なし）
-  const dateTime =
-    now.getFullYear() + "-" +
-    String(now.getMonth() + 1).padStart(2, "0") + "-" +
-    String(now.getDate()).padStart(2, "0") +
-    " (" + youbi + ") " +
+const dateTime =
+    now.getFullYear() + " " + 
+    String(now.getMonth() + 1).padStart(2, "0") + "\n" +   // ← 年 月 の後で改行
+    String(now.getDate()).padStart(2, "0") + " (" + youbi + ") " +
     now.getHours().toString().padStart(2, "0") + ":" +
     now.getMinutes().toString().padStart(2, "0");
 
