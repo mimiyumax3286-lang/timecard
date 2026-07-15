@@ -8,29 +8,33 @@ body {
   margin: 10px;
 }
 
-/* 出勤・退勤ボタン */
-body > button {
-  width: 48%;
+/* ▼ 出勤・退勤ボタン（横並び） ▼ */
+.start-end-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.start-end-buttons button {
+  flex: 1;
   padding: 22px 0;
   font-size: 26px;
   border: none;
   border-radius: 14px;
-  margin-right: 12px;
   background: linear-gradient(#4CC9A6, #3BBE97);
   color: white;
   cursor: pointer;
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
   transition: 0.2s;
-  display: inline-block;
   box-sizing: border-box;
 }
 
-body > button:active {
+.start-end-buttons button:active {
   box-shadow: 0 3px 8px rgba(0,0,0,0.25);
   transform: translateY(3px);
 }
 
-body > button:hover {
+.start-end-buttons button:hover {
   background: #3BBE97;
 }
 
@@ -55,27 +59,33 @@ body > button:hover {
 
 /* ▼▼▼ 打刻の表示ここから ▼▼▼ */
 
+/* ul の余白を完全に消す（最重要） */
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
 /* li（打刻1件）を左ギリギリに寄せる */
 li {
-  padding: 0;              /* ← 左右の余白ゼロ */
+  padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;  /* ← 時刻 → ボタンの縦並び */
-  align-items: flex-start; /* ← 左寄せ */
+  flex-direction: column;
+  align-items: flex-start;
   border-bottom: 1px solid #eee;
 }
 
 /* 打刻の文字（span） */
 li span {
-  font-size: 14px;         /* ← 打刻の文字を小さく */
-  white-space: pre-line;   /* ← 改行をそのまま表示 */
-  text-align: left;        /* ← 左寄せ */
+  font-size: 14px;
+  white-space: pre-line;
+  text-align: left;
 }
 
 /* 編集・消すボタンを横並びにする枠 */
 .btn-row {
   display: flex;
-  flex-direction: row;     /* ← 横並び */
+  flex-direction: row;
   gap: 10px;
   margin-top: 4px;
 }
@@ -90,15 +100,3 @@ li button {
   cursor: pointer;
   font-size: 14px;
 }
-  ul {
-  margin: 0;          /* ← 左の余白を消す */
-  padding-left: 0;    /* ← 行頭のインデントを消す（最重要） */
-}
-/* 出勤・退勤ボタンを確実に横並びにする */
-.start-end-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.start-end-buttons button {
-  flex: 1;}
